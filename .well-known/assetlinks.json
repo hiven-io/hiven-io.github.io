@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.hiven.client",
+      "sha256_cert_fingerprints": [
+        "CB:8E:66:7B:26:EC:65:BF:D0:7E:42:5C:AC:9B:E9:17:93:CA:0E:5A:43:4C:F7:8C:CB:28:F1:50:E6:CE:EC:EF"
+      ]
+    }
+  }
+]
