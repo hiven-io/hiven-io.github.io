@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "app.hiven.client",
       "sha256_cert_fingerprints": [
-        "CB:8E:66:7B:26:EC:65:BF:D0:7E:42:5C:AC:9B:E9:17:93:CA:0E:5A:43:4C:F7:8C:CB:28:F1:50:E6:CE:EC:EF"
+        "CB:8E:66:7B:26:EC:65:BF:D0:7E:42:5C:AC:9B:E9:17:93:CA:0E:5A:43:4C:F7:8C:CB:28:F1:50:E6:CE:EC:EF",
+        "CB:8C:19:D6:6B:26:11:B9:F9:6D:50:DC:94:C0:93:4C:B1:C6:E8:24:98:3E:ED:E6:8F:84:10:2C:97:FA:B5:F1"
       ]
     }
   }
