@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hiven</title>
   <script>
-    // Redireciona para o deep link antes da página renderizar.
-    // No iOS/Android com o app instalado e Universal/App Links configurados,
-    // o OS intercepta a URL HTTPS e abre o app diretamente (sem executar este script).
     (function () {
       var p = new URLSearchParams(location.search);
       var t = p.get('t');
@@ -16,6 +13,8 @@
       if (t && id && map[t]) {
         location.replace('hiven://' + map[t] + '/' + id);
       }
+      // Fallback: redireciona para a landing page após 2,5 s.
+      setTimeout(function () { location.replace('/'); }, 2500);
     })();
   </script>
   <style>
@@ -28,59 +27,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
     }
-    main { text-align: center; max-width: 320px; }
     .logo {
       width: 72px;
       height: 72px;
       background: #BE123C;
       border-radius: 20px;
-      margin: 0 auto 24px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .logo span { color: #FFF8F5; font-size: 32px; font-weight: 700; }
-    h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-    p  { font-size: 15px; color: #6E625C; line-height: 1.5; }
-    .stores { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
-    a.btn {
-      display: block;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity .15s;
-    }
-    a.btn:active { opacity: .75; }
-    .ios  { background: #BE123C; color: #FFF8F5; }
-    .and  { background: #F2ECE9; color: #2A2320; }
-    #fallback { display: none; }
   </style>
 </head>
 <body>
-  <main>
-    <div class="logo"><span>H</span></div>
-    <h1>Abrindo no Hiven…</h1>
-    <p>Se o app não abrir automaticamente, baixe-o abaixo.</p>
-
-    <div id="fallback" class="stores">
-      <a class="btn ios" href="https://apps.apple.com/app/hiven/id000000000">
-        Baixar na App Store
-      </a>
-      <a class="btn and" href="https://play.google.com/store/apps/details?id=app.hiven.client">
-        Baixar no Google Play
-      </a>
-    </div>
-  </main>
-
-  <script>
-    // Mostra os links de download após 2,5 s (caso o app não abra).
-    setTimeout(function () {
-      document.getElementById('fallback').style.display = 'flex';
-    }, 2500);
-  </script>
+  <div class="logo"><span>H</span></div>
 </body>
 </html>
